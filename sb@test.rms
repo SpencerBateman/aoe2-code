@@ -1,0 +1,22 @@
+/* My First Map Attempt */
+
+<PLAYER_SETUP>
+random_placement
+
+<LAND_GENERATION>
+base_terrain GRASS2
+
+<ELEVATION_GENERATION>
+create_elevation 2
+{
+base_terrain GRASS2
+number_of_tiles 1250
+number_of_clumps 24
+set_scale_by_groups
+}
+
+/*<OBJECT_GENERATION>*/
+/*create_object BAMBOO {*/
+/*number_of_objects 10*/
+/*number_of_groups 1*/
+/*}*/
