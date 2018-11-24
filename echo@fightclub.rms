@@ -12,11 +12,11 @@ base_terrain GRASS
 create_land
 {
   terrain_type DIRT3
-  land_percent 13
-  top_border 30
-  right_border 30
-  left_border 30
-  bottom_border 30
+  land_percent 20
+  top_border 25
+  right_border 25
+  left_border 25
+  bottom_border 25
   other_zone_avoidance_distance 15
 }
 
@@ -35,7 +35,7 @@ create_terrain WATER
 {
   base_terrain DIRT3
   land_percent 1
-  number_of_clumps 1
+  number_of_clumps 4
   set_scale_by_groups
   other_zone_avoidance_distance 5
 }
@@ -98,13 +98,33 @@ create_object SCOUT
 /* STUFF SUROUNDING PLAYERS  */
 /* * * * * * * * * * * * * * */
 /* UNDER TC SHEEP */
+/* Single Close Sheep to make the start more consistent */
 create_object SHEEP
 {
   set_place_for_every_player
   min_distance_to_players       4
   max_distance_to_players       5
   number_of_objects             1
- }
+}
+create_object SHEEP
+{
+	number_of_objects				3
+	set_loose_grouping
+	set_gaia_object_only
+	set_place_for_every_player
+	min_distance_to_players			8
+	max_distance_to_players			10
+}
+create_object SHEEP
+{
+	number_of_groups				2
+	number_of_objects				2
+	set_loose_grouping
+	set_gaia_object_only
+	set_place_for_every_player
+	min_distance_to_players			12
+	max_distance_to_players			20
+}
 
 create_object FORAGE
 {
@@ -116,6 +136,49 @@ create_object FORAGE
   set_tight_grouping
   set_gaia_object_only
   set_place_for_every_player
+}
+/* DEER */
+create_object DEER
+{
+	number_of_objects				4
+	group_placement_radius			3
+	set_loose_grouping
+	set_gaia_object_only
+	set_place_for_every_player
+	min_distance_to_players			14
+	max_distance_to_players			18
+	min_distance_group_placement	9
+}
+
+create_object DEER
+{
+	number_of_objects				4
+	group_variance					1
+	set_loose_grouping
+	set_gaia_object_only
+	set_place_for_every_player
+	min_distance_to_players			40
+	min_distance_group_placement	9
+}
+
+/* STRAGGLER TREES */
+create_object OAKTREE
+{
+	number_of_objects				2
+	set_gaia_object_only
+	set_place_for_every_player
+	min_distance_to_players			4
+	max_distance_to_players			5
+	min_distance_group_placement	2
+}
+create_object PINETREE
+{
+	number_of_objects				3
+	set_gaia_object_only
+	set_place_for_every_player
+	min_distance_to_players			6
+	max_distance_to_players			8
+	min_distance_group_placement	2
 }
 
 create_object GOLD
@@ -159,7 +222,7 @@ create_object RELIC
 /* OBJEXTS IN THE JUNGLE PIT */
 create_object SHORE_FISH
 {
-  number_of_objects                   15
+  number_of_objects                   30
   set_scaling_to_map_size
   min_distance_group_placement        1
   set_gaia_object_only
@@ -169,7 +232,7 @@ create_object SHORE_FISH
 create_object JUNGLE_TREE
 {
   terrain_to_place_on DIRT3
-  number_of_objects 250
+  number_of_objects 300
 }
 
 create_object BOAR
