@@ -23,7 +23,7 @@ create_land
 create_player_lands
 {
   terrain_type DIRT2
-  land_percent 10
+  land_percent 6
   other_zone_avoidance_distance 5
   base_size 9
 }
@@ -69,6 +69,48 @@ create_object SCOUT
   max_distance_to_players       9
 }
 
+/* * * * * * * * * * * * * * */
+/* STUFF SUROUNDING PLAYERS  */
+/* * * * * * * * * * * * * * */
+
+create_object FORAGE
+{
+  number_of_objects              4
+  group_placement_radius         3
+  min_distance_to_players        10
+  max_distance_to_players        12
+  min_distance_group_placement   6
+  set_tight_grouping
+  set_gaia_object_only
+  set_place_for_every_player
+}
+
+create_object GOLD
+{
+  number_of_objects              4
+  group_placement_radius         3
+  set_tight_grouping
+  set_gaia_object_only
+  set_place_for_every_player
+  min_distance_to_players        10
+  max_distance_to_players        14
+  min_distance_group_placement   7
+  max_distance_to_other_zones    7
+}
+
+create_object STONE
+{
+  number_of_objects          3
+  group_placement_radius     2
+  set_tight_grouping
+  set_gaia_object_only
+  set_place_for_every_player
+  min_distance_to_players    11
+  max_distance_to_players    13
+  min_distance_group_placement  7
+  max_distance_to_other_zones  7
+}
+
 /* * * * * * * * * * *  */
 /* RELICS  * * * * * *  */
 /* * * * * * * * * * *  */
@@ -78,34 +120,6 @@ create_object RELIC
    number_of_objects            5
    min_distance_to_players     25
    temp_min_distance_group_placement 20
-}
-/* NEAR FORAGE */
-
-create_object FORAGE
-{
-  number_of_objects          6
-  group_placement_radius     3
-  set_tight_grouping
-  set_gaia_object_only
-  set_place_for_every_player
-  min_distance_to_players    10
-  max_distance_to_players    12
-  min_distance_group_placement  6
-}
-
-/* NEAR GOLD */
-
-create_object GOLD
-{
-  number_of_objects          7
-  group_placement_radius     3
-  set_tight_grouping
-  set_gaia_object_only
-  set_place_for_every_player
-  min_distance_to_players    12
-  max_distance_to_players    16
-  min_distance_group_placement  7
-  max_distance_to_other_zones  7
 }
 
 /* MEDIUM GOLD */
@@ -140,18 +154,6 @@ create_object GOLD
 
 /* NEAR STONE */
 
-create_object STONE
-{
-  number_of_objects          5
-  group_placement_radius     2
-  set_tight_grouping
-  set_gaia_object_only
-  set_place_for_every_player
-  min_distance_to_players    14
-  max_distance_to_players    18
-  min_distance_group_placement  7
-  max_distance_to_other_zones  7
-}
 
 /* FAR STONE */
 
